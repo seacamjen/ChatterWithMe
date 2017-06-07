@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "137940888810",
+    "firebase_url": "https://chatterwithme-da8ab.firebaseio.com",
+    "project_id": "chatterwithme-da8ab",
+    "storage_bucket": "chatterwithme-da8ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137940888810:android:350aa420c03c64ea",
+        "android_client_info": {
+          "package_name": "com.example.guest.chatterwithme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137940888810-407jtrdaehbdduap1cakonq6vvbinpqf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guest.chatterwithme",
+            "certificate_hash": "b91bd06c9cfd15ca10895acf295f13860cb5d8ba"
+          }
+        },
+        {
+          "client_id": "137940888810-nf5g8shk8er9sv3hc373hjc65g614e6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY0S3YmxJvau7IJsJae0b_hMLmwF1oLYM"
+        },
+        {
+          "current_key": "AIzaSyDh1vBmhoVodcjjCRLLC178IylD41kZJWk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137940888810-nf5g8shk8er9sv3hc373hjc65g614e6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
