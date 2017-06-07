@@ -7,7 +7,7 @@
     tools:context="com.example.guest.chatterwithme.ui.LoginActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/loginEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.223" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/loginPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -45,9 +45,9 @@
         app:layout_constraintVertical_bias="0.404" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/LoginToApp"
+        android:layout_width="132dp"
+        android:layout_height="69dp"
         android:text="Login"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -57,12 +57,13 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.729"
+        app:layout_constraintVertical_bias="0.666"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent"
+        android:textSize="30dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/loginToRegister"
         android:layout_width="202dp"
         android:layout_height="37dp"
         android:text="Register An Account"
