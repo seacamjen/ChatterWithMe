@@ -2,24 +2,37 @@ package com.example.guest.chatterwithme.ui;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 import com.example.guest.chatterwithme.R;
+import com.example.guest.chatterwithme.models.ChatMessage;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    @Bind(R.id.fab) FloatingActionButton mFab;
+    @Bind(R.id.input) EditText mInput;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -33,6 +46,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+        mFab.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mFab) {
+            final String message = mInput.getText().toString().trim();
+            DatabaseReference messageRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference("messages");
+            messageRef.push().setValue(new ChatMessage(message, "Person"));
+            Log.v("Saving?", "Saved please oooooooooooo");
+        }
+        mInput.setText("");
     }
 
     @Override
