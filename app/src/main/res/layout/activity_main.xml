@@ -50,7 +50,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="329dp"
-        android:layout_height="408dp"
+        android:layout_height="508dp"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
