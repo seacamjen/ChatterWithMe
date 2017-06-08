@@ -76,7 +76,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
     private void createNewUser() {
         mName = mRegisterName.getText().toString().trim();
-        final String name = mRegisterName.getText().toString().trim();
+//        final String name = mRegisterName.getText().toString().trim();
         final String email = mRegisterEmail.getText().toString().trim();
         String password = mRegisterPassword.getText().toString().trim();
         String confirmPassword = mRegisterRePassword.getText().toString().trim();
