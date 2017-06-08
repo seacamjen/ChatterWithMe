@@ -40,7 +40,6 @@ public class FirebaseMessageViewHolder extends RecyclerView.ViewHolder implement
 
         messageUser.setText(chatMessage.getMessageUser());
         messageText.setText(chatMessage.getMessageText());
-//        messageTime.setText(Long.toString(chatMessage.getMessageTime()));
         messageTime.setText(convertTime(chatMessage.getMessageTime()));
     }
 

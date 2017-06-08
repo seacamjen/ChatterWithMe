@@ -25,7 +25,6 @@
         <EditText
             android:layout_width="307dp"
             android:layout_height="44dp"
-            android:hint="hint"
             android:id="@+id/input"/>
     </android.support.design.widget.TextInputLayout>
 
