@@ -17,7 +17,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.parceler.Parcels;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class FirebaseMessageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     View mView;
@@ -37,7 +40,8 @@ public class FirebaseMessageViewHolder extends RecyclerView.ViewHolder implement
 
         messageUser.setText(chatMessage.getMessageUser());
         messageText.setText(chatMessage.getMessageText());
-        messageTime.setText(Long.toString(chatMessage.getMessageTime()));
+//        messageTime.setText(Long.toString(chatMessage.getMessageTime()));
+        messageTime.setText(convertTime(chatMessage.getMessageTime()));
     }
 
     @Override
@@ -65,5 +69,11 @@ public class FirebaseMessageViewHolder extends RecyclerView.ViewHolder implement
 
             }
         });
+    }
+
+    public String convertTime(long time) {
+        Date date = new Date(time);
+        Format format = new SimpleDateFormat("h:mm a");
+        return format.format(date);
     }
 }

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference mSearchedMessageReference;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private String mUserName;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
+                    mUserName = user.getDisplayName();
                 } else {
 
                 }
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DatabaseReference messageRef = FirebaseDatabase
                     .getInstance()
                     .getReference("messages");
-            ChatMessage newMessage = new ChatMessage(message, "Person");
+            ChatMessage newMessage = new ChatMessage(message, mUserName);
             messageRef.push().setValue(newMessage);
         }
         mInput.setText("");
