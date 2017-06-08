@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .getInstance()
                 .getReference()
                 .child("messages");
-        setUpFirebaseAdapter();
+
 
         mSearchedMessageReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
         mFab.setOnClickListener(this);
+        setUpFirebaseAdapter();
     }
 
     private void setUpFirebaseAdapter() {
@@ -106,8 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DatabaseReference messageRef = FirebaseDatabase
                     .getInstance()
                     .getReference("messages");
-            messageRef.push().setValue(new ChatMessage(message, "Person"));
-            Log.v("Saving?", "Saved please oooooooooooo");
+            ChatMessage newMessage = new ChatMessage(message, "Person");
+            messageRef.push().setValue(newMessage);
         }
         mInput.setText("");
     }
